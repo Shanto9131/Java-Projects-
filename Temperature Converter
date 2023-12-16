@@ -1,1 +1,324 @@
+package Temp_con;
+
+public class main {
+
+	public static void main(String[] args) {
+		new Frame1();
+	}
+}
+
+//package Temp_con;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class warning {
+	warning() {
+		new JFrame();
+		JOptionPane.showMessageDialog(new JFrame() ,"You can input only One","Alert",JOptionPane.WARNING_MESSAGE);
+	}
+}
+
+
+//package Temp_con;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Frame1 extends JFrame implements ActionListener {
+	
+	JPanel p1,p2,p3;
+	
+	JTextField tx1,tx2,tx3,tx4;
+	
+	JButton a1,a2,a3,clear;
+	
+	String ss,res;
+	
+	
+	
+	public Frame1() {
+		
+		setSize(400,520);
+		setDefaultCloseOperation(3);
+		setResizable(true);
+		setLocationRelativeTo(null);
+		setLayout(null);
+		setTitle("Temperature Converter ");
+		
+		
+		Font font = new Font("Times New Roman",Font.BOLD,30);
+		
+		
+		p1 = new JPanel();
+		p1.setBounds(2, 2,380,100);
+		p1.setBackground(Color.lightGray);
+		p1.setLayout(null);
+		add(p1);
+		
+		p2 = new JPanel();
+		p2.setBackground(Color.DARK_GRAY);
+		p2.setBounds(2, 101,380,280);
+		p2.setLayout(null);
+		add(p2);
+		
+		
+		p3 = new JPanel();
+		p3.setBackground(Color.black);
+		p3.setBounds(2, 381,380,98);
+		p3.setLayout(new GridLayout(1,3, 0, 0));
+		add(p3);
+			
+		
+		JLabel label5 = new JLabel("Temperature Converter");
+		label5.setBounds(35,30,380,30);
+		label5.setFont(new Font("Times New Roman", Font.BOLD, 30));
+		label5.setForeground(Color.black);
+		p1.add(label5);
+		
+		
+		JLabel label1 = new JLabel(" C     : ");
+		label1.setFont(font);
+		label1.setBounds(50,10, 200, 30);
+		label1.setForeground(Color.white);
+		p2.add(label1);
+		
+		
+		
+		tx1 = new JTextField();
+		tx1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		tx1.setBounds(150, 10,200,30);
+		tx1.setBackground(Color.white);
+		p2.add(tx1);
+		
+		
+		
+		JLabel label2 = new JLabel(" F     : ");
+		label2.setFont(font);
+		label2.setBounds(50,60, 200, 30);
+		label2.setForeground(Color.white);
+		p2.add(label2);
+		
+		tx2 = new JTextField();
+		tx2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		tx2.setBounds(150, 60,200,30);
+		tx2.setBackground(Color.white);
+		p2.add(tx2);
+		
+		
+		
+		
+		JLabel label3 = new JLabel(" K     :");
+		label3.setFont(font);
+		label3.setBounds(50,110, 200, 30);
+		label3.setForeground(Color.white);
+		p2.add(label3);
+		
+		tx3 = new JTextField();
+		tx3.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		tx3.setBounds(150, 110,200,30);
+		tx3.setBackground(Color.white);
+		p2.add(tx3);
+		
+		
+		
+		JLabel label4 = new JLabel(" Output :");
+		label4.setFont(font);
+		label4.setBounds(10,160, 200, 30);
+		label4.setForeground(Color.white);
+		p2.add(label4);
+		
+		
+		tx4 = new JTextField();
+		tx4.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		tx4.setBounds(150, 160,200,30);
+		tx4.setBackground(Color.white);
+		p2.add(tx4);
+		
+		
+		
+		clear = new JButton("Clear");
+		clear.setFont(font);
+		clear.setBounds(130, 220,120,30);
+		clear.setFocusable(false);
+		clear.setBackground(Color.red);
+		clear.setForeground(Color.white);
+		p2.add(clear);
+		
+		
+		a1 = new JButton("C");
+		a1.setFont(font);
+		a1.setFocusable(false);
+		a1.setBackground(Color.WHITE);
+		a1.setForeground(Color.black);
+		p3.add(a1);
+		
+		
+		a2 = new JButton("F");
+		a2.setFont(font);
+		a2.setFocusable(false);
+		a2.setBackground(Color.white);
+		a2.setForeground(Color.black);
+		p3.add(a2);
+		
+		
+		a3 = new JButton("K");
+		a3.setFont(font);
+		a3.setFocusable(false);
+		a3.setBackground(Color.WHITE);
+		a3.setForeground(Color.black);
+		p3.add(a3);
+		
+		
+		
+		a1.addActionListener(this);
+		a2.addActionListener(this);
+		a3.addActionListener(this);
+		clear.addActionListener(this);
+		
+
+		
+		setVisible(true);
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		String s = tx1.getText();
+		String s1 = tx2.getText();
+		String s2 = tx3.getText();
+		
+		
+		if(e.getSource()==clear) 
+		{
+			tx1.setText("");
+			tx2.setText("");
+			tx3.setText("");
+			tx4.setText("");
+		}
+		
+		if((s.length()>0 && s1.length()>0) ||(s.length()>0 && s2.length()>0) || s1.length()>0 && s2.length()>0) {
+			
+			new warning();
+			s="";
+			s1="";
+			s2="";
+			tx4.setText("");
+			tx3.setText("");
+			tx2.setText("");
+			tx1.setText("");
+		}
+		
+		if(e.getSource() == a1)
+		{
+			
+			if(s.length()>0&&(s1.length()==0&&s2.length()==0))
+			{
+				tx4.setText(s+"°"+"C");
+				s="";
+			}
+			
+			if(s1.length()>0 && (s.length()==0&&s2.length()==0))
+			{
+				Float a = Float.parseFloat(s1);
+				Float c = (float) ((a-32.00)*(5.0/9));
+				res  = String.format("%.2f",c);
+				tx4.setText(res+"°"+"C");
+				s="";
+				s1="";
+				s2="";
+			}
+			if(s2.length()>0 && (s.length()==0&&s1.length()==0))
+			{
+				Float a = (float) Float.parseFloat(s2);
+				Float c = (a-273);
+				res  = String.format("%.2f",c);
+				tx4.setText(res+"°"+"C");
+				s="";
+				s1="";
+				s2="";
+			}
+			
+		}
+		else if(e.getSource() == a2)
+		{
+			
+			if(s1.length()>0&&(s.length()==0&&s2.length()==0))
+			{
+				tx4.setText(s1+"°"+"F");
+			}
+			
+			if(s.length()>0 && (s1.length()==0&&s2.length()==0))
+			{
+				Float a = Float.parseFloat(s);
+				Float c = (float) ((a*1.8)+32);
+				res  = String.format("%.2f",c);
+				tx4.setText(res+"°"+"F");
+				s="";
+				s1="";
+				s2="";
+			}
+			if(s2.length()>0 && (s.length()==0&&s1.length()==0))
+			{
+				Float a = Float.parseFloat(s2);
+				Float c = (a-273);
+				Float d = (float) (c*1.8);
+				Float ans = (float) (d+32.00);
+				res  = String.format("%.2f",ans);
+				tx4.setText(res+"°"+"F");
+				s="";
+				s1="";
+				s2="";
+			}
+			
+		}
+		
+		else if(e.getSource() == a3)
+		{
+			
+			if(s2.length()>0&&(s.length()==0&&s1.length()==0))
+			{
+				tx4.setText(s2+"°"+"K");
+				s="";
+				s1="";
+				s2="";
+			}
+			
+			if(s.length()>0 && (s1.length()==0&&s2.length()==0))
+			{
+				Float a = Float.parseFloat(s);
+				Float c = a+273;
+				res  = String.format("%.2f",c);
+				tx4.setText(res+"°"+"K");
+				s="";
+				s1="";
+				s2="";
+			}
+			if(s1.length()>0 && (s.length()==0&&s2.length()==0))
+			{
+				Float a = Float.parseFloat(s1);
+				Float c = (a-32);
+				Float d = (float) (c*0.56);
+				Float ans = (float) (d+273.00);
+				res  = String.format("%.2f",ans);
+				tx4.setText(res+"°"+"K");
+				s="";
+				s1="";
+				s2="";
+			}
+		}
+		
+	}
+	
+}
 
