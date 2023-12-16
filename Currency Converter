@@ -1,0 +1,170 @@
+//package first_swing;
+
+public class main {
+
+	public static void main(String[] args) {
+		new Frame();
+	}
+
+}
+
+
+//package first_swing;
+
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
+
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.JLabel;
+//import javax.swing.JTextField;
+
+public class Frame extends JFrame implements ActionListener {
+	
+	
+	JButton button1,button2,button3,button4,button5;
+	JButton button6,button7,button8,button9;
+	JTextField num1,num2;
+	
+	public Frame() {
+		
+		setSize(500,500);
+		setDefaultCloseOperation(3);
+		setResizable(true);
+		setLocationRelativeTo(null);
+		setLayout(null);
+		
+		
+		button1 = new JButton("USA");
+		button1.setBounds(25,200,100,50);
+		add(button1);
+		
+		button2 = new JButton("CANADA");
+		button2.setBounds(135,200,100,50);
+		add(button2);
+		
+		button3 = new JButton("INDIA");
+		button3.setBounds(245,200,100,50);
+		add(button3);
+		
+		button4 = new JButton("PAKISTAN");
+		button4.setBounds(355,200,100,50);
+		add(button4);
+		
+		button5 = new JButton("RASSIA");
+		button5.setBounds(25,300,100,50);
+		add(button5);
+		
+		button6 = new JButton("S.ARAB");
+		button6.setBounds(135,300,100,50);
+		add(button6);
+		
+		button7 = new JButton("MALDIVE");
+		button7.setBounds(245,300,100,50);
+		add(button7);
+		
+		button8 = new JButton("BHUTAN");
+		button8.setBounds(355,300,100,50);
+		add(button8);
+		
+		button9 = new JButton("CLEAR");
+		button9.setBounds(190,375,100,50);
+		add(button9);
+		
+		
+		num1 = new JTextField();
+		num1.setBounds(250,50,200,50);
+		add(num1);
+		
+		JLabel label1 = new JLabel("Bangladeshi TK         : ");
+		label1.setBounds(50,45,300,50);
+		add(label1);
+		
+		
+		num2 = new JTextField();
+		num2.setBounds(250,125,200,50);
+		add(num2);
+		
+		
+		JLabel label2 = new JLabel("Converted Amount   : ");
+		label2.setBounds(50,120,300,50);
+		add(label2);
+		
+		
+		button1.addActionListener(this);
+		button2.addActionListener(this);
+		button3.addActionListener(this);
+		button4.addActionListener(this);
+		button5.addActionListener(this);
+		button6.addActionListener(this);
+		button7.addActionListener(this);
+		button8.addActionListener(this);
+		button9.addActionListener(this);
+		
+		setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()== button9) {
+			num1.setText("");
+			num2.setText("");
+		}
+		if(e.getSource()==button8) {
+			String s = num1.getText();
+			float a = Float.parseFloat(s);
+			float c = (float) (a / 1.33);
+			String res = String.valueOf(c);
+			num2.setText(res+" "+"NGULTRUM");
+		}
+		if(e.getSource()==button7) {
+			String s = num1.getText();
+			float a = Float.parseFloat(s);
+			float c = (float) (a / 7.17);
+			String res = String.valueOf(c);
+			num2.setText(res+" "+"Rufiyaa");
+		}
+		if(e.getSource()==button6) {
+			String s = num1.getText();
+			float a = Float.parseFloat(s);
+			float c = (float) (a / 29.50);
+			String res = String.valueOf(c);
+			num2.setText(res+" "+"Saudi Riyal");
+		}
+		if(e.getSource()==button5) {
+			String s = num1.getText();
+			float a = Float.parseFloat(s);
+			float c = (float) (a / 1.21);
+			String res = String.valueOf(c);
+			num2.setText(res+" "+"Ruble");
+		}
+		if(e.getSource()==button4) {
+			String s = num1.getText();
+			float a = Float.parseFloat(s);
+			float c = (float) (a /0.39);
+			String res = String.valueOf(c);
+			num2.setText(res+" "+"Rupee");
+		}
+		if(e.getSource()==button3) {
+			String s = num1.getText();
+			float a = Float.parseFloat(s);
+			float c = (float) (a / 1.33);
+			String res = String.valueOf(c);
+			num2.setText(res+" "+"Rupee");
+		}
+		if(e.getSource()==button2) {
+			String s = num1.getText();
+			float a = Float.parseFloat(s);
+			float c = (float) (a / 81);
+			String res = String.valueOf(c);
+			num2.setText(res+" "+"Dollar");
+		}
+		if(e.getSource()==button1) {
+			String s = num1.getText();
+			float a = Float.parseFloat(s);
+			float c = (float) (a / 110.68);
+			String res = String.valueOf(c);
+			num2.setText(res+" "+"Dollar");
+		}
+	}
+}
